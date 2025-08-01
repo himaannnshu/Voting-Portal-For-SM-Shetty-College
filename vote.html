@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./vote.css" />
+    <title>Voting Portal</title>
+  </head>
+
+  <body>
+    <!-- Logo -->
+    <nav>
+      <img
+        src="https://www.smshettycollege.edu.in/images/main-logo.png"
+        alt="Logo"
+      />
+      <h3 id="demotext">Bunts Sangha's SM Shetty Junior College</h3>
+    </nav>
+    <!-- Login Form -->
+    <div class="login" id="loginSection">
+      <h1>🎯 Voting Portal</h1>
+      <form class="login-form category" onsubmit="handleLogin(event)">
+        <div class="form-stream">
+          <p>Login as :</p>
+          <input
+            type="radio"
+            name="userType"
+            id="voter"
+            value="voter"
+            checked
+          />
+          <label for="voter">Voter</label>
+          <input type="radio" name="userType" id="admin" value="admin" />
+          <label for="admin">Admin</label>
+        </div>
+
+        <div id="voterFields">
+          <div class="form-stream">
+            <p>Select Stream :</p>
+            <input type="radio" name="stream" id="sci" value="Science" />
+            <label for="sci">Science</label>
+            <input type="radio" name="stream" id="com" value="Commerce" />
+            <label for="com">Commerce</label>
+            <input type="radio" name="stream" id="arts" value="Arts" />
+            <label for="arts">Arts</label>
+          </div>
+          <div class="form-group">
+            <p>Enter your name :</p>
+            <input type="text" id="name" placeholder="Name" />
+          </div>
+          <div class="form-group">
+            <p>Select your class :</p>
+            <select id="classs">
+              <option value="">Select Class</option>
+              <option value="11th">11th</option>
+              <option value="12th">12th</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <p>Enter your division :</p>
+            <input type="text" id="div" placeholder="Division" />
+          </div>
+        </div>
+
+        <div id="adminFields" style="display: none">
+          <div class="form-group">
+            <p>Admin Password :</p>
+            <input type="password" id="adminPassword" placeholder="Password" />
+          </div>
+        </div>
+
+        <p id="error-msg"></p>
+        <button class="btn" type="submit">Login</button>
+      </form>
+    </div>
+
+    <!-- Main Container -->
+    <div class="container" id="mainContainer" style="display: none">
+      <div class="card-inner" id="cardInner">
+        <!-- Voter Panel -->
+        <div class="front" id="voterPanel">
+          <h1>🎯 Voter Portal</h1>
+
+          <!-- Voter Info Display -->
+          <div id="voterInfo" class="voter-info"></div>
+
+          <!-- Success message -->
+          <p id="msg"></p>
+
+          <div class="categories">
+            <div class="category">
+              <h2>🟦 LR Category</h2>
+              <p class="instruction-text">
+                Select one candidate from LR category:
+              </p>
+              <div class="candidates" id="lrCandidates">
+                <!-- Candidates will be populated by JavaScript -->
+              </div>
+            </div>
+
+            <div class="category">
+              <h2>🟥 CR Category</h2>
+              <p class="instruction-text">
+                Select one candidate from CR category:
+              </p>
+              <div class="candidates" id="crCandidates">
+                <!-- Candidates will be populated by JavaScript -->
+              </div>
+            </div>
+          </div>
+
+          <button onclick="logout()" class="logout-btn">Logout</button>
+        </div>
+
+        <!-- Admin Panel -->
+        <div class="back" id="adminPanel">
+          <div class="admin">
+            <h1>🛠️ Admin Panel</h1>
+
+            <!-- Candidate Management -->
+            <div class="admin-section">
+              <h3>Manage Candidates</h3>
+              <div class="candidate-management">
+                <select
+                  id="categorySelect"
+                  onchange="loadCandidatesForUpdate()"
+                >
+                  <option value="LR">LR Category</option>
+                  <option value="CR">CR Category</option>
+                </select>
+                <input
+                  type="text"
+                  id="candidateName"
+                  placeholder="Candidate Name"
+                />
+                <button onclick="addCandidate()">Add Candidate</button>
+                <button onclick="removeCandidate()">Remove Candidate</button>
+              </div>
+
+              <!-- Update Candidate Section -->
+              <div class="update-candidate-section">
+                <h4>Update Existing Candidate</h4>
+                <div class="candidate-management">
+                  <select id="existingCandidateSelect">
+                    <option value="">Select candidate to update</option>
+                  </select>
+                  <input
+                    type="text"
+                    id="newCandidateName"
+                    placeholder="New Candidate Name"
+                  />
+                  <button onclick="updateCandidate()">Update Candidate</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Results Section -->
+            <div class="admin-section">
+              <h3>View Results</h3>
+              <button onclick="showTotalVotes()">Show Total Votes</button>
+              <button onclick="showVotesByCategory()">
+                Show Votes by Category
+              </button>
+              <button onclick="showAllVoters()">Show Voter Details</button>
+              <button onclick="clearAllData()" class="danger-btn">
+                Clear All Data
+              </button>
+            </div>
+
+            <div id="results"></div>
+            <button onclick="logout()" class="logout-btn">Logout</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="./vote.js"></script>
+  </body>
+</html>

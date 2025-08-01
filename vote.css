@@ -1,0 +1,395 @@
+body {
+    font-family: "Nunito", sans-serif;
+    background: #d9fff5;
+    margin: 0;
+    padding: 20px;
+    color: #333;
+}
+
+h1, h2, h3 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-weight: 700;
+}
+
+button {
+    font-weight: 600;
+}
+
+p, td {
+    font-weight: 400;
+}
+nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-size: 2rem;
+}
+#demotext {
+/* color: #FFFFFF;
+text-shadow: 0 -1px 2px #FFF, 0 -2px 5px #000, 0 -10px 20px #000, 0 -18px 40px #000;
+color: #000; */
+text-transform: uppercase;
+}
+/* Login Styles */
+.login {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    font-size: 1.1rem;
+    max-width: 500px;
+    margin: 10px auto;
+    background: #b9f5d8;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.login-form {
+    width: 100%;
+}
+
+.form-group, .form-stream {
+    margin-bottom: 20px;
+}
+
+.form-group p, .form-stream p {
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.form-group input, .form-group select {
+    width: 90%;
+    padding: 12px 15px;
+    border: none;
+    border-radius: 8px;
+    background-color: #eee;
+    font-size: 16px;
+}
+
+.form-group select {
+    width: 95%;
+}
+
+.form-stream label {
+    cursor: pointer;
+    margin-right: 15px;
+    margin-left: 5px;
+}
+
+.form-stream input[type="radio"] {
+    margin-right: 5px;
+}
+
+.login-form button, .btn {
+    width: 100%;
+    padding: 15px;
+    margin: 20px 0 10px 0;
+    font-size: 18px;
+    font-weight: 600;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s ease;
+    background: #6b8f71;
+    color: white;
+}
+
+.login-form button:hover, .btn:hover {
+    background: #5a7a60;
+    transform: translateY(-2px);
+}
+
+#error-msg {
+    margin-top: 10px;
+    color: red;
+    border-radius: 5px;
+    font-weight: 600;
+}
+
+/* Main Container */
+.container {
+    max-width: 1200px;
+    margin: 20px auto;
+}
+
+.card-inner {
+    position: relative;
+    width: 100%;
+}
+
+/* Voter Info Display */
+.voter-info {
+    background: #e8f5e8;
+    padding: 15px 25px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    text-align: center;
+    border-left: 4px solid #6b8f71;
+}
+
+/* Categories and Candidates */
+.categories {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+}
+
+.category {
+    background: #b9f5d8;
+    padding: 25px 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    width: 350px;
+    min-width: 300px;
+}
+
+.category h2 {
+    margin-bottom: 20px;
+}
+
+.instruction-text {
+    text-align: center;
+    font-weight: 600;
+    color: #4a5d4a;
+    margin-bottom: 15px;
+    font-size: 14px;
+}
+
+.candidates button {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0;
+    font-size: 16px;
+    font-weight: 600;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s ease;
+    background: #d9fff5;
+    color: black;
+}
+
+.candidates button:hover {
+    background: #aad2ba;
+    transform: translateY(-1px);
+}
+
+/* Message Display */
+#msg {
+    background: #b9f5d8;
+    padding: 20px 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    font-size: 18px;
+    text-align: center;
+    margin: 20px 0;
+    font-weight: 700;
+    color: #1d1e18;
+    transition: all 0.3s ease;
+    display: none;
+}
+
+/* Admin Panel */
+.admin {
+    text-align: center;
+    padding: 30px;
+    background: #b9f5d8;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    margin: auto;
+}
+
+.admin-section {
+    margin-bottom: 30px;
+    padding: 20px;
+    background: #e8f5e8;
+    border-radius: 10px;
+}
+
+.admin-section h3 {
+    margin-bottom: 15px;
+    color: #4a5d4a;
+}
+
+.admin-section h4 {
+    margin: 20px 0 15px 0;
+    color: #4a5d4a;
+    font-size: 16px;
+}
+
+.update-candidate-section {
+    margin-top: 25px;
+    padding: 15px;
+    background: #f0f8f0;
+    border-radius: 8px;
+    border: 1px solid #d0e5d0;
+}
+
+.candidate-management {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.candidate-management select,
+.candidate-management input {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background: white;
+    font-size: 14px;
+    min-width: 150px;
+}
+
+.candidate-management button {
+    padding: 10px 15px;
+    margin: 5px;
+    border: none;
+    border-radius: 5px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s ease;
+    background: #6b8f71;
+    color: white;
+}
+
+.candidate-management button:hover {
+    background: #5a7a60;
+}
+
+.admin button {
+    background-color: #6a11cb;
+    background-image: linear-gradient(315deg, #6a11cb 0%, #2575fc 74%);
+    color: white;
+    padding: 12px 20px;
+    margin: 10px;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.admin button:hover {
+    transform: scale(1.05);
+}
+
+.danger-btn {
+    background: linear-gradient(315deg, #ff4757 0%, #ff3838 74%) !important;
+}
+
+.danger-btn:hover {
+    background: linear-gradient(315deg, #ff3838 0%, #ff2f2f 74%) !important;
+}
+
+/* Logout Button */
+.logout-btn {
+    background: #dc3545;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 600;
+    margin-top: 20px;
+    transition: 0.3s ease;
+}
+
+.logout-btn:hover {
+    background: #c82333;
+    transform: translateY(-1px);
+}
+
+/* Results Display */
+#results {
+    margin-top: 30px;
+    font-size: 16px;
+    text-align: left;
+    background-color: #f8f9fa;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+ul {
+    padding-left: 20px;
+}
+
+/* Table Styles */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    overflow: hidden;
+    font-size: 16px;
+}
+
+thead {
+    background-color: #6B8F71;
+    color: white;
+}
+
+th, td {
+    padding: 14px 20px;
+    text-align: left;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #F0FFF9;
+}
+
+tbody tr:nth-child(odd) {
+    background-color: #E2F7EF;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .categories {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .category {
+        width: 90%;
+        min-width: unset;
+    }
+    
+    .login {
+        margin: 20px auto;
+        padding: 20px;
+    }
+    
+    .candidate-management {
+        flex-direction: column;
+    }
+    
+    .candidate-management select,
+    .candidate-management input {
+        width: 200px;
+        margin-bottom: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 10px;
+    }
+    
+    .admin {
+        padding: 15px;
+    }
+    
+    .form-group input, .form-group select {
+        width: 85%;
+    }
+}
